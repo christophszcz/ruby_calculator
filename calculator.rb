@@ -1,13 +1,13 @@
 puts "Hi there what operation would you like to do?"
 operation = gets.chomp.downcase
 puts "Please order your expression as if you were writing it from left to right. What would be the first number?"
-num1 = gets.chomp.to_i
+num1 = gets.chomp.to_f
 puts "What would be the second number?"
-num2 = gets.chomp.to_i
+num2 = gets.chomp.to_f
 
 def calculation(operation, num1, num2)
   if operation == 'add' || operation == '+' || operation == 'addition' || operation == 'adding'
-    puts num1 + num2
+    num1 + num2 
   elsif operation == 'subtract' || operation == '-' || operation == 'subtracting' || operation == 'subtraction'
     num1 - num2
   elsif operation == 'multiply' || operation == '*' || operation == 'multiplying' || operation == 'multiplication'
@@ -22,4 +22,4 @@ def calculation(operation, num1, num2)
 end
 
 print "Answer:"
-puts calculation(operation, num1, num2)
+puts sprintf('%.2f', calculation(operation, num1, num2)) 
